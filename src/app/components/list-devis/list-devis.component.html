@@ -19,9 +19,6 @@
                             <thead>
                                 <tr class="text-uppercase">
                                     <th>Nom du produit</th>
-                                    <th>longueur</th>
-                                    <th>largeur</th>
-                                    <th>epaisseur</th>
                                     <th>quantité</th>
                                     <th>Nom Prenom</th>
                                     <th>Email</th>
@@ -33,9 +30,6 @@
                             <tbody *ngFor="let devis of devis | async ">
                                 <tr>
                                     <td>{{ devis.sujet }}</td>
-                                    <td>{{ devis.longueur }}</td>
-                                    <td>{{ devis.largeur }}</td>
-                                    <td>{{ devis.epaisseur }}</td>
                                     <td>{{ devis.quantite }}</td>
                                     <td>{{ devis.nomprenom }}</td>
                                     <td>{{ devis.email }}</td>
