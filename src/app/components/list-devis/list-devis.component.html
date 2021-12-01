@@ -1,0 +1,70 @@
+<div class="col-md-12">
+    <div class="card">
+
+        <div class="h-tab">
+
+
+
+
+
+            <div class="tab-content">
+
+                <div class="card-body titre">
+                    <h5>Liste des devis</h5>
+                </div>
+
+                <div class="card-body reset-table p-t-0 tab">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr class="text-uppercase">
+                                    <th>Nom du produit</th>
+                                    <th>longueur</th>
+                                    <th>largeur</th>
+                                    <th>epaisseur</th>
+                                    <th>quantité</th>
+                                    <th>Nom Prenom</th>
+                                    <th>Email</th>
+                                    <th>Telephone</th>
+                                    <th>Adresse</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let devis of devis | async ">
+                                <tr>
+                                    <td>{{ devis.sujet }}</td>
+                                    <td>{{ devis.longueur }}</td>
+                                    <td>{{ devis.largeur }}</td>
+                                    <td>{{ devis.epaisseur }}</td>
+                                    <td>{{ devis.quantite }}</td>
+                                    <td>{{ devis.nomprenom }}</td>
+                                    <td>{{ devis.email }}</td>
+                                    <td>{{ devis.telephone }}</td>
+                                    <td>{{ devis.adresse }}</td>
+                                    <td>
+                                        <button (click)="devisDelete(devis.id)" type="button"
+                                            class="btn btn-danger btn-round btn-outline-danger">Supprimer</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</div>

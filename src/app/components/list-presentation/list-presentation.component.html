@@ -1,0 +1,70 @@
+<div class="col-md-12">
+    <div class="card">
+
+        <div class="h-tab">
+
+
+
+
+
+            <div class="tab-content">
+
+                <div class="card-body titre">
+                    <h5>Presentation</h5>
+                </div>
+
+                <div class="card-body reset-table p-t-0 tab">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr class="text-uppercase">
+                                    <th>Titre</th>
+                                    <th>Description</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody
+                                *ngFor="let presentation of presentation | async ">
+                                <tr>
+
+                                    <td>{{ presentation.titre }}</td>
+                                    <td>{{ presentation.texte }}</td>
+
+
+
+                                    <td>
+                                        <button (click)="presentationUpdate(presentation.id)" type="button"
+                                            class="btn btn-primary btn-round btn-outline-primary">
+                                            Modifier
+                                        </button>
+
+                                        &nbsp; &nbsp;
+
+                                        <button (click)="presentationDelete(presentation.id)" type="button"
+                                            class="btn btn-danger btn-round btn-outline-danger">Supprimer</button>
+
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</div>

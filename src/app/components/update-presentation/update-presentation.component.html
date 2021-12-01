@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-sm-12">
+        <app-card>
+
+            <h4 class="sub-title">Modifier une presentation</h4>
+
+            <form name="form" novalidate #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+
+
+
+                <div class="row">
+                    <div class="col-sm-12 mobile-inputs">
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Titre</label>
+                            <div class="col-sm-4">
+                                <input name="titre" #titre="ngModel" required [(ngModel)]="presentation.titre" type="text"
+                                    [(ngModel)]="presentation.titre" type="text" class="form-control">
+                                <div class="alert alert-danger" *ngIf="f.submitted && titre.invalid">
+                                    <span *ngIf="titre.errors.required">required</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12 mobile-inputs">
+                        <div class="form-group row">
+
+
+                            <label class="col-sm-2 col-form-label">Description</label>
+                            <div class="col-sm-10">
+                                <textarea name="texte" #texte="ngModel" required
+                                    [(ngModel)]="presentation.texte" rows="5" cols="5" class="form-control"
+                                    placeholder="texte"></textarea>
+                                <div class="alert alert-danger" *ngIf="f.submitted && texte.invalid">
+                                    <span *ngIf="texte.errors.required">required</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="center">
+                    <button class="btn btn-primary topp">Modifier</button>
+                </div>
+            </form>
+
+
+        </app-card>
+
+    </div>
+</div>
+<ngx-spinner></ngx-spinner>

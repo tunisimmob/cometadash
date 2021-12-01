@@ -1,0 +1,29 @@
+.imglogo {
+    width: 200px;
+}
+
+button {
+    background-color: #007ac2;
+    border-color: #007ac2;
+}
+
+button:hover {
+    background-color: #3981aa;
+    border-color: #3981aa;
+}
+
+button:disabled {
+    background-color: #46728c;
+    border-color: #46728c;
+}
+
+button:focus {
+    background-color: #007ac2;
+    border-color: #007ac2;
+}
+
+.bg-primary {
+    background-color: #007ac2 !important;
+    color: #fff;
+}
+

@@ -1,0 +1,148 @@
+<div class="row">
+    <div class="col-sm-12">
+        <app-card>
+
+            <h4 class="sub-title">Ajouter un produit</h4>
+
+            <form name="form" novalidate #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+
+
+
+                <div class="row">
+                    <div class="col-sm-12 mobile-inputs">
+
+                        <div class="form-group row">
+
+
+                            <label class="col-sm-2 col-form-label">Titre</label>
+                            <div class="col-sm-4">
+                                <input name="titre" #titre="ngModel" required [(ngModel)]="produit.titre" type="text"
+                                    class="form-control">
+
+                                <div class="alert alert-danger" *ngIf="f.submitted && titre.invalid">
+                                    <span *ngIf="titre.errors.required">required</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="row">
+                    <div class="col-sm-12 mobile-inputs">
+
+                        <div class="form-group row">
+
+                            <label class="col-sm-2 col-form-label">Description</label>
+                            <div class="col-sm-4">
+                                <textarea name="description" #description="ngModel" required
+                                    [(ngModel)]="produit.description" rows="5" cols="5" class="form-control"
+                                    placeholder="Description"></textarea>
+                                <div class="alert alert-danger" *ngIf="f.submitted && description.invalid">
+                                    <span *ngIf="description.errors.required">required</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-sm-12 mobile-inputs">
+
+                        <div class="form-group row">
+
+                            <label class="col-sm-2 col-form-label">Categorie</label>
+                            <div class="col-sm-4">
+
+
+                                <!-- <input required name="categorie" #categorie="ngModel" [(ngModel)]="produit.categorie"
+                                    type="text" class="form-control"> -->
+
+
+                                <select required name="categorie" #categorie="ngModel" [(ngModel)]="produit.categorie"
+                                    class="form-control">
+                                    <option value="Porte et automatisme">Porte et automatisme</option>
+                                    <option value="Toles">Toles</option>
+                                    <option value="Tubes">Tubes</option>
+                                    <option value="Fer Marchands">Fer Marchands</option>
+                                    <option value="Lames rideaux et Accessoires">Lames rideaux et Accessoires</option>
+                                    <option value="Accessoires portes">Accessoires portes</option>
+                                    <option value="Décoration">Décoration</option>
+                                    <option value="Couverture">Couverture</option>
+                                    <option value="Polycabonate">Polycabonate</option>
+                                    <option value="Quincaillerie">Quincaillerie</option>
+                                    <option value="Outillage">Outillage</option>
+                                    <option value="Equipement Bosch">Equipement Bosch</option>
+                                </select>
+
+
+
+                                <div class="alert alert-danger" *ngIf="f.submitted && categorie.invalid">
+                                    <span *ngIf="categorie.errors.required">required</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!--------------------------------------------------- Images ------------------------------------------------------>
+
+
+
+                <div class="form-group row">
+
+                    <label class="col-sm-2 col-form-label">Images</label>
+                    <div class="col-sm-10">
+
+
+                        <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop
+                            (onFileDropped)="uploadImageExt($event)">
+                            <input multiple hidden type="file" #fileInput
+                                (change)="uploadImageExt($event.target.files)">
+                        </div>
+
+
+                        <div class="files-list" *ngFor="let file of files">
+                            <p>{{ file }}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="center">
+                    <button class="btn btn-primary">Ajouter</button>
+                </div>
+            </form>
+
+
+        </app-card>
+
+
+
+    </div>
+
+</div>

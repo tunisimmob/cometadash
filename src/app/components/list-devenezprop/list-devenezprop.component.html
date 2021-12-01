@@ -1,0 +1,65 @@
+<div class="col-md-12">
+    <div class="card">
+
+        <div class="h-tab">
+
+
+
+
+
+            <div class="tab-content">
+
+                <div class="card-body titre">
+                    <h5>Devenez Franchisé</h5>
+                </div>
+
+                <div class="card-body reset-table p-t-0 tab">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr class="text-uppercase">
+                                    <th>Nom Prenom</th>
+                                    <th>Email</th>
+                                    <th>Telephone</th>
+                                    <th>Ville</th>
+                                    <th>Sujet</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let devenezprop of devenezprop | async ">
+                                <tr>
+
+                                    <td>{{ devenezprop.nomprenom }}</td>
+                                    <td>{{ devenezprop.email }}</td>
+                                    <td>{{ devenezprop.telephone }}</td>
+                                    <td>{{ devenezprop.ville }}</td>
+                                    <td>{{ devenezprop.sujet }}</td>
+
+
+                                    <td>
+                                        <button (click)="devenezpropDelete(devenezprop.id)" type="button"
+                                            class="btn btn-danger btn-round btn-outline-danger">Supprimer</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
