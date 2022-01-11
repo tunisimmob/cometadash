@@ -8,7 +8,7 @@ import { HttpResponse } from '@angular/common/http';
 
 import { Contact } from '../interfaces/contact';
 import { Message } from '../interfaces/message';
-import { Presentation } from '../interfaces/presentation';
+import { PresentationaccessKeyId } from '../interfaces/presentation';
 import { Video } from '../interfaces/video';
 import { DevenezFranchiser } from '../interfaces/devenezfranchiser';
 import { Devis } from '../interfaces/devis';

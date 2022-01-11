@@ -96,12 +96,12 @@ export class UpdateProduitComponent implements OnInit {
 
   public uploadImageExt(event) {
     for (let index = 0; index < event.length; index++) {
- 
+
       const element = event[index];
       const contentType = event[index].type;
       const bucket = new S3({
-        accessKeyId: "AKIAXVWFAUBHFUM7UQ24",
-        secretAccessKey: "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",
+        accessKeyId: 'AKIAXVWFAUBHPVQ7OO5C',
+        secretAccessKey: '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',
         region: "eu-west-3",
       });
       const params = {
@@ -114,14 +114,14 @@ export class UpdateProduitComponent implements OnInit {
       this.getimage = bucket.upload(params, function (err, data) {
         return data.location
       });
-     
+
       this.image_url1 = this.getimage.singlePart.params.Key
       this.photourl = this.image_url.concat(this.image_url1);
       this.produit.images.push(this.photourl)
       this.files.push(element.name)
     }
     console.log(this.produit.images.length)
-    
+
   }
 }
 
